@@ -1,0 +1,13 @@
+Team kickoff notes
+
+Goal: ship a focused document workspace that helps a team move work forward.
+
+Today's decisions
+- Prioritize reliable editing, import, and sharing.
+- Use seeded demo identities to keep the review frictionless.
+- Detect stale saves instead of pretending asynchronous edits are live collaboration.
+
+Next steps
+1. Share this document with Maya.
+2. Switch accounts and edit the notes.
+3. Reopen as Abdul and verify the update.

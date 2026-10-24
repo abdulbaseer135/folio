@@ -1,0 +1,85 @@
+TAP version 13
+# Subtest: title validation trims whitespace and rejects empty titles
+ok 1 - title validation trims whitespace and rejects empty titles
+  ---
+  duration_ms: 2.119741
+  ...
+# Subtest: title validation limits metadata length
+ok 2 - title validation limits metadata length
+  ---
+  duration_ms: 0.162877
+  ...
+# Subtest: document ID validation prevents query object injection
+ok 3 - document ID validation prevents query object injection
+  ---
+  duration_ms: 0.277594
+  ...
+# Subtest: version validation rejects missing, negative, and non-integer values
+ok 4 - version validation rejects missing, negative, and non-integer values
+  ---
+  duration_ms: 0.197539
+  ...
+# Subtest: empty document and seeded welcome content pass validation
+ok 5 - empty document and seeded welcome content pass validation
+  ---
+  duration_ms: 1.044613
+  ...
+# Subtest: plain-text imports preserve line boundaries including blank lines
+ok 6 - plain-text imports preserve line boundaries including blank lines
+  ---
+  duration_ms: 0.280775
+  ...
+# Subtest: imported HTML remains literal text, not executable rich-text nodes
+ok 7 - imported HTML remains literal text, not executable rich-text nodes
+  ---
+  duration_ms: 0.139465
+  ...
+# Subtest: formatting survives JSON serialization
+ok 8 - formatting survives JSON serialization
+  ---
+  duration_ms: 0.215738
+  ...
+# Subtest: ordered lists support Tiptap default attributes
+ok 9 - ordered lists support Tiptap default attributes
+  ---
+  duration_ms: 0.255558
+  ...
+# Subtest: arbitrary executable nodes and link marks are rejected
+ok 10 - arbitrary executable nodes and link marks are rejected
+  ---
+  duration_ms: 0.296097
+  ...
+# Subtest: unsupported HTML attributes are rejected
+ok 11 - unsupported HTML attributes are rejected
+  ---
+  duration_ms: 0.17931
+  ...
+# Subtest: malformed block and list structure is rejected
+ok 12 - malformed block and list structure is rejected
+  ---
+  duration_ms: 0.187878
+  ...
+# Subtest: unsupported heading levels are rejected
+ok 13 - unsupported heading levels are rejected
+  ---
+  duration_ms: 0.162653
+  ...
+# Subtest: document size limit is enforced
+ok 14 - document size limit is enforced
+  ---
+  duration_ms: 1.897664
+  ...
+# Subtest: excessive nesting is rejected before recursive exhaustion
+ok 15 - excessive nesting is rejected before recursive exhaustion
+  ---
+  duration_ms: 0.314869
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 85.494395
