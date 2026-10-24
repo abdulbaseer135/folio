@@ -34,3 +34,4 @@ This implementation was prepared with AI assistance (Perplexity for initial arch
 | Sharing, uninvited access, revocation | Verified: Sam Rivera receives HTTP 404; collaborator Maya receives HTTP 403 on share management. |
 | Stale-write conflict | Verified: Version mismatch returns HTTP 409 and preserves existing server content. |
 | Public deployed flow / mobile viewport | Verified: https://folio-zq34.onrender.com/ responsive and functional at 390px. |
+| Print / Save as PDF | Verified: Candidate manually triggered the print dialog, named, saved, and opened the resulting PDF. Additional print edge-cases (such as long multi-page pagination) were not explicitly verified. |

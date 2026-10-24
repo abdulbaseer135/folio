@@ -60,6 +60,7 @@ Automated verification executed in Node.js 22/24 environment:
 - With MongoDB integration enabled (`TEST_MONGODB_URI`): **29 passed, 0 failed, 0 skipped total** (`server/test/mongo.integration.test.js` exercised isolated Atlas/local database atomic writes and revocation).
 - Production build: `npm run build` compiled client bundle with zero errors.
 - Live deployment verification on Render (https://folio-zq34.onrender.com/): specifically tested and confirmed for demo user login, document creation, renaming, rich formatting (bold, italic, underline, heading 1, heading 2, bulleted lists, and numbered lists), autosave, reopening persistence, UTF-8 .txt import (<=256 KB), owner-collaborator sharing, access isolation (HTTP 404 for unshared third users, HTTP 403 on collaborator share management), stale-save conflict rejection (HTTP 409), and 390px mobile viewport layout.
+- Manual print verification: candidate manually triggered the browser Print / Save as PDF action, specified a file name, saved, and opened the resulting PDF. Additional print edge-cases (such as multi-page pagination) were not explicitly tested.
 - Remaining deliverables: walkthrough video recording and Google Drive folder assembly.
 
 ## Intentionally incomplete
