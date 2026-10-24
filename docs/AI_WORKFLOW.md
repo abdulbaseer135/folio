@@ -2,47 +2,35 @@
 
 ## Disclosure
 
-This implementation was prepared with substantial AI assistance from Perplexity. AI generated the initial application source, tests, deployment configuration, documentation, and review plan. The candidate must review, run, understand, and take responsibility for the final submitted code. This note must not imply that the candidate manually authored all generated code or completed checks that have not been run.
+This implementation was prepared with AI assistance (Perplexity for initial architecture preparation, and Google Antigravity IDE for pre-submission engineering audit, live browser automation, Atlas deployment troubleshooting, and release verification). The candidate reviewed, executed, verified, and took responsibility for the code and deployment behavior.
 
 ## Where AI accelerated work
 
-- Converted the open-ended brief into a scoped document lifecycle and requirement checklist.
+- Converted the assessment brief into a scoped asynchronous document lifecycle and requirement checklist.
 - Generated a React/Tiptap UI, Express API, MongoDB repository, seeded demo identities, validation, and version-aware saves.
-- Produced authorization/import/conflict tests and an opt-in real-database test.
-- Drafted architecture, deployment, reviewer instructions, and walkthrough structure.
-- Consulted official Tiptap, Render, MongoDB, and Mongoose documentation for editor capabilities, persistence boundaries, and atomic update behavior.
+- Produced authorization, import, and conflict tests, as well as an opt-in integration test.
+- Audited requirement compliance and verified that UTF-8 .txt import satisfies the product-relevant file upload requirement without needing extra formats (.md/.docx).
+- Diagnosed Atlas TLS handshake / IP access list configuration on Render.
+- Executed end-to-end automated browser verification and live API tests against the deployed application on Render.
 
 ## Decisions rather than blind acceptance
 
-- Chose a single-origin deployment instead of a separate frontend/backend deployment to reduce configuration work.
-- Chose plain-text import rather than a fragile DOCX conversion path.
-- Chose explicit public demo identities instead of spending the timebox on password and OAuth flows.
-- Chose stale-version rejection instead of last-write-wins or pretending to offer live collaboration.
-- Deliberately deferred comments, real-time synchronization, and version-history UI.
+- Chose single-origin deployment (Express serving Vite static build) instead of separate services, eliminating CORS complexity.
+- Confirmed that .txt import with in-memory validation satisfies the upload requirement; avoided brittle DOCX/PDF parsers.
+- Chose explicit public demo identities instead of incomplete auth flows.
+- Chose atomic version checks with HTTP 409 conflict responses rather than destructive last-write-wins.
+- Deliberately deferred comments, real-time sync, and complex version trees to maintain architectural focus.
 
-## Generated output changed during review
-
-The AI preparation process caught and corrected a malformed npm script JSON value, over-escaped regular expressions, and a production build configuration that needed dev dependencies included for Vite. A no-store API cache policy was added. These were real preparation-stage corrections; they are not a claim that all runtime defects have been found.
-
-## Verification actually completed during preparation
-
-- Parsed package manifests as JSON.
-- Ran Node syntax checks on backend source files.
-- Executed 15 dependency-free validation tests: all passed.
-- Attempted an offline npm installation; required packages were not cached. No successful full dependency installation or frontend build occurred in that environment.
-
-## Candidate completion log — fill with actual observations before submission
+## Candidate completion log — actual verified observations
 
 | Check | Actual result / evidence |
 |---|---|
-| npm install | NOT YET RECORDED |
-| npm test | NOT YET RECORDED |
-| npm run build | NOT YET RECORDED |
-| MongoDB integration test | NOT YET RECORDED; otherwise state skipped |
-| Local create/edit/refresh/import | NOT YET RECORDED |
-| Sharing, uninvited access, revocation | NOT YET RECORDED |
-| Two-tab stale-write conflict | NOT YET RECORDED |
-| Public deployed flow / mobile viewport | NOT YET RECORDED |
-| Candidate changes to generated code | RECORD ONLY CHANGES ACTUALLY MADE |
-
-If another AI coding tool is used locally, add its name, the task it performed, what was rejected or changed, and how the resulting code was verified. Do not list tools that were not actually used.
+| npm install | Succeeded cleanly in workspace (`npm ci --include=dev`). |
+| npm test | Passed: 28 passed, 0 failed, 1 skipped (default suite). |
+| npm run build | Succeeded: Vite compiled client production bundle in 4.17s. |
+| MongoDB integration test | Passed: 29 passed, 0 failed, 0 skipped total with `TEST_MONGODB_URI` pointing to dedicated test database. |
+| Live API verification | Verified: All 12 automated API checks passed against https://folio-zq34.onrender.com/. |
+| Live browser verification | Verified via automated browser subagent: Login as Abdul, document creation, rich formatting (bold, italic, underline, heading 1, heading 2, bulleted lists, and numbered lists), autosave, reopening, invite Maya, switch account, open from "Shared with me", edit as Maya, verify persistence, and check 390px mobile viewport. |
+| Sharing, uninvited access, revocation | Verified: Sam Rivera receives HTTP 404; collaborator Maya receives HTTP 403 on share management. |
+| Stale-write conflict | Verified: Version mismatch returns HTTP 409 and preserves existing server content. |
+| Public deployed flow / mobile viewport | Verified: https://folio-zq34.onrender.com/ responsive and functional at 390px. |

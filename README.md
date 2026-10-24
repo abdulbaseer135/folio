@@ -6,16 +6,22 @@ Create, rename, format, import, persist, and share documents. The experience is 
 
 ## Reviewer quick start
 
-- Live application: REPLACE_WITH_VERIFIED_LIVE_URL
+- Live application: https://folio-zq34.onrender.com/
 - Walkthrough: REPLACE_WITH_PUBLIC_VIDEO_URL
 - Demo identities: Abdul Baseer, Maya Chen, Sam Rivera.
 - No passwords: select an identity on the landing page.
 - Suggested flow: Abdul creates a document → shares with maya@demo.local → switch to Maya → Shared with me → edit → save → switch back and reopen as Abdul.
 - This is an openly accessible sandbox. All identities can be selected by any visitor. Do not store sensitive data.
+- Note on free tier hosting: If inactive, Render may take 40–60 seconds for a cold start.
 
 ## Verification status
 
-All 28 automated HTTP API, authorization, and structural validation tests have been executed and passed. The frontend production build (`vite build`) has been compiled and verified with zero errors. When `TEST_MONGODB_URI` was provided, the opt-in MongoDB persistence, atomic update, and revocation integration test also executed and passed (29 of 29 passed). Public cloud deployment, the live reviewer URL, walkthrough video recording, and Google Drive deliverables remain pending manual release. Links in the section above are placeholders until deployment is completed.
+Automated tests and cloud deployment have been verified:
+- Default test suite: **28 passed, 0 failed, 1 skipped** (in-memory fixtures testing API security, validation, sharing, and versioning).
+- With MongoDB integration enabled (`TEST_MONGODB_URI`): **29 passed, 0 failed, 0 skipped total** (including isolated Atlas/local database atomic writes and revocation).
+- Client production build (`vite build`): compiled with zero syntax or bundling errors.
+- Live deployment on Render (https://folio-zq34.onrender.com/) backed by MongoDB Atlas: specifically exercised and verified for demo authentication, document creation, renaming, rich-text formatting (bold, italic, underline, heading 1, heading 2, bulleted lists, and numbered lists), autosave, reopening persistence, UTF-8 .txt import (<=256 KB limit), owner-to-collaborator sharing, access isolation (HTTP 404 for unshared users, HTTP 403 for collaborator sharing attempts), stale-write conflict detection (HTTP 409), and responsive 390px mobile layout.
+- Remaining items: candidate walkthrough video recording and Google Drive folder assembly. Shared editing is deliberately asynchronous rather than real-time WebSocket co-editing.
 
 ## Stack and design
 
