@@ -2,11 +2,11 @@
 
 Candidate: Abdul Baseer
 
-## Links — replace before submitting
+## Links
 
-- Google Drive folder: REPLACE_WITH_PUBLIC_FOLDER_LINK
+- Google Drive folder: https://drive.google.com/drive/folders/1cyd7NwnsOftccbGs0QkeyycbTZ-Yo7IB?usp=drive_link
 - Live product: https://folio-zq34.onrender.com/
-- Walkthrough video: REPLACE_WITH_PUBLIC_3_TO_5_MINUTE_VIDEO_URL
+- Walkthrough video: https://drive.google.com/file/d/18zxFLNZgflZ_s-Erl-mQ4rXvGqDnLDu0/view?usp=drive_link (silent with on-screen text explanations)
 
 ## Review in two minutes
 
@@ -57,11 +57,11 @@ Screenshots are not included in the preparation package. Add real screenshots to
 
 Automated verification executed in Node.js 22/24 environment:
 - Default test suite: **28 passed, 0 failed, 1 skipped** (`server/test/api.test.js` and `server/test/validation.test.js`).
-- With MongoDB integration enabled (`TEST_MONGODB_URI`): **29 passed, 0 failed, 0 skipped total** (`server/test/mongo.integration.test.js` exercised isolated Atlas/local database atomic writes and revocation).
+- With MongoDB integration enabled (`TEST_MONGODB_URI`): **29 passed TOTAL, 0 failed, 0 skipped** (`server/test/mongo.integration.test.js` exercised isolated Atlas/local database atomic writes and revocation).
 - Production build: `npm run build` compiled client bundle with zero errors.
 - Live deployment verification on Render (https://folio-zq34.onrender.com/): specifically tested and confirmed for demo user login, document creation, renaming, rich formatting (bold, italic, underline, heading 1, heading 2, bulleted lists, and numbered lists), autosave, reopening persistence, UTF-8 .txt import (<=256 KB), owner-collaborator sharing, access isolation (HTTP 404 for unshared third users, HTTP 403 on collaborator share management), stale-save conflict rejection (HTTP 409), and 390px mobile viewport layout.
 - Manual print verification: candidate manually triggered the browser Print / Save as PDF action, specified a file name, saved, and opened the resulting PDF. Additional print edge-cases (such as multi-page pagination) were not explicitly tested.
-- Remaining deliverables: walkthrough video recording and Google Drive folder assembly.
+- Walkthrough video: recorded and verified accessible via Google Drive link (silent with on-screen text explanations).
 
 ## Intentionally incomplete
 
@@ -86,6 +86,10 @@ npm run build
 npm run dev
 ```
 
-## Pre-submit honesty gate
+## Pre-submit verification confirmation
 
-Replace every REPLACE_WITH_* marker, record a real video, verify the public product, and update the AI/verification notes with the checks actually performed. The preparation package by itself does not satisfy the live-deployment or video requirement.
+All required deliverables have been generated and verified:
+- Live product URL verified on Render.
+- Google Drive folder and walkthrough video links verified.
+- Automated test suites (28 default, 29 total with integration) verified.
+- The repository archive (folio-submission.zip) contains clean verified source with zero credentials or dependencies.

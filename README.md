@@ -7,7 +7,8 @@ Create, rename, format, import, persist, and share documents. The experience is 
 ## Reviewer quick start
 
 - Live application: https://folio-zq34.onrender.com/
-- Walkthrough: REPLACE_WITH_PUBLIC_VIDEO_URL
+- Walkthrough: https://drive.google.com/file/d/18zxFLNZgflZ_s-Erl-mQ4rXvGqDnLDu0/view?usp=drive_link (silent with on-screen text explanations)
+- Google Drive folder: https://drive.google.com/drive/folders/1cyd7NwnsOftccbGs0QkeyycbTZ-Yo7IB?usp=drive_link
 - Demo identities: Abdul Baseer, Maya Chen, Sam Rivera.
 - No passwords: select an identity on the landing page.
 - Suggested flow: Abdul creates a document → shares with maya@demo.local → switch to Maya → Shared with me → edit → save → switch back and reopen as Abdul.
@@ -18,10 +19,11 @@ Create, rename, format, import, persist, and share documents. The experience is 
 
 Automated tests and cloud deployment have been verified:
 - Default test suite: **28 passed, 0 failed, 1 skipped** (in-memory fixtures testing API security, validation, sharing, and versioning).
-- With MongoDB integration enabled (`TEST_MONGODB_URI`): **29 passed, 0 failed, 0 skipped total** (including isolated Atlas/local database atomic writes and revocation).
+- With MongoDB integration enabled (`TEST_MONGODB_URI`): **29 passed TOTAL, 0 failed, 0 skipped** (including isolated Atlas/local database atomic writes and revocation).
 - Client production build (`vite build`): compiled with zero syntax or bundling errors.
 - Live deployment on Render (https://folio-zq34.onrender.com/) backed by MongoDB Atlas: specifically exercised and verified for demo authentication, document creation, renaming, rich-text formatting (bold, italic, underline, heading 1, heading 2, bulleted lists, and numbered lists), autosave, reopening persistence, UTF-8 .txt import (<=256 KB limit), owner-to-collaborator sharing, access isolation (HTTP 404 for unshared users, HTTP 403 for collaborator sharing attempts), stale-write conflict detection (HTTP 409), and responsive 390px mobile layout.
-- Remaining items: candidate walkthrough video recording and Google Drive folder assembly. Shared editing is deliberately asynchronous rather than real-time WebSocket co-editing.
+- Manual print verification: candidate verified browser Print / Save as PDF action, saving and opening a PDF cleanly.
+- Walkthrough video: recorded and verified accessible. Shared editing is deliberately asynchronous rather than real-time WebSocket co-editing.
 
 ## Stack and design
 
