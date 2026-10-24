@@ -50,6 +50,7 @@ Screenshots are not included in the preparation package. Add real screenshots to
 - Owned/shared navigation and server-enforced document access.
 - MongoDB persistence with structured content and sharing metadata.
 - Version-aware writes, visible stale-write conflicts, and local plain-text backup.
+- Browser Print / Save as PDF with dedicated print stylesheet and title rendering.
 - Responsive UI, empty/loading/error states, meaningful automated tests, and single-service deployment configuration.
 
 ## Actual verification

@@ -123,6 +123,7 @@ Open http://localhost:3001. Development mode must be stopped first if it already
 - Original filename is retained as document metadata; the original file is not stored on disk.
 - .md, .docx, attachments, images, and embedded HTML are intentionally not supported.
 - Download text exports a plain-text copy. It does not preserve rich formatting.
+- Print / Save as PDF opens the browser print dialog with print-optimized CSS, rendering the document title and formatted content while hiding editor UI chrome, toolbars, and navigation.
 
 ## Access model
 
